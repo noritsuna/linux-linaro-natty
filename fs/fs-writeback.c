@@ -1016,7 +1016,7 @@ void __mark_inode_dirty(struct inode *inode, int flags)
 
 	trace_dirty_inode(inode, current);
 
-	if (unlikely(block_dump))
+	if (unlikely(block_dump > 1))
 		block_dump___mark_inode_dirty(inode);
 
 	spin_lock(&inode_lock);
